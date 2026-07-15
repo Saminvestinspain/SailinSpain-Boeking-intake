@@ -347,25 +347,25 @@
         <div class="field">
           <label>Gerechten</label>
           <div class="pill-group" id="food-grp">
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Mediterranean breakfast board"> Ontbijtboard</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Chicken salad"> Kippensalade</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Pasta deluxe (prawns)"> Pasta deluxe</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Paella"> Paella</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Tapas board – luxury"> Tapas luxe</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Fresh Tortilla"> Tortilla</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Tiramisu"> Tiramisu</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Fresh fruit"> Vers fruit</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Mediterranean breakfast board"> Ontbijtboard</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Chicken salad"> Kippensalade</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Pasta deluxe (prawns)"> Pasta deluxe</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Paella"> Paella</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Tapas board – luxury"> Tapas luxe</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Fresh Tortilla"> Tortilla</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Tiramisu"> Tiramisu</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Fresh fruit"> Vers fruit</label>
           </div>
         </div>
         <div class="field">
           <label>Alcoholische dranken (optioneel)</label>
           <div class="pill-group" id="drinks-grp">
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Wine"> Wijn</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Cava"> Cava</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Champagne"> Champagne</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Gin & tonic"> Gin & tonic</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Vodka + fresh orange"> Vodka OJ</label>
-            <label class="pill" onclick="togCb(this)"><input type="checkbox" value="Mojito"> Mojito</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Wine"> Wijn</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Cava"> Cava</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Champagne"> Champagne</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Gin & tonic"> Gin & tonic</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Vodka + fresh orange"> Vodka OJ</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Mojito"> Mojito</label>
           </div>
         </div>
         <div class="row2">
@@ -418,8 +418,11 @@
       }
     }
 
-    function togCb(el) {
+    function togCb(el, ev) {
+      if (ev) ev.preventDefault();
       el.classList.toggle('on');
+      const cb = el.querySelector('input[type=checkbox]');
+      if (cb) cb.checked = el.classList.contains('on');
     }
 
     function getChecked(id) {
