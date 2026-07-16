@@ -271,8 +271,8 @@
   <div class="header">
     <div class="logo-mark"><i class="fa-solid fa-sailboat"></i></div>
     <div>
-      <h1>Sail in Spain — Boeking intake</h1>
-      <p>Vul alle gegevens in en druk onderaan op "Verzend boeking"</p>
+      <h1>Sail in Spain — Booking</h1>
+      <p>Fill in all details and press "Submit booking" below / Vul alle gegevens in en druk onderaan op "Verzend boeking"</p>
     </div>
   </div>
 
@@ -280,16 +280,16 @@
 
     <!-- Klantgegevens -->
     <div class="section">
-      <div class="section-head"><i class="fa-solid fa-user"></i><span>Klantgegevens</span></div>
+      <div class="section-head"><i class="fa-solid fa-user"></i><span>Client details / Klantgegevens</span></div>
       <div class="section-body">
         <div class="row2">
-          <div class="field"><label>Naam</label><input type="text" id="name" placeholder="Voornaam Achternaam" autocomplete="off"></div>
-          <div class="field"><label>ID / Paspoortnummer</label><input type="text" id="idnr" placeholder="bv. 554812612" autocomplete="off"></div>
+          <div class="field"><label>Name / Naam</label><input type="text" id="name" placeholder="First name Last name" autocomplete="off"></div>
+          <div class="field"><label>ID / Passport number</label><input type="text" id="idnr" placeholder="e.g. 554812612" autocomplete="off"></div>
         </div>
-        <div class="field"><label>Adres</label><input type="text" id="address" placeholder="Straat, postcode, stad, land" autocomplete="off"></div>
+        <div class="field"><label>Address / Adres</label><input type="text" id="address" placeholder="Street, postal code, city, country" autocomplete="off"></div>
         <div class="row2">
-          <div class="field"><label>Aantal gasten</label><input type="number" id="guests" min="1" max="12" placeholder="4"></div>
-          <div class="field"><label>Leeftijden gasten</label><input type="text" id="ages" placeholder="bv. 35, 38, 12, 10" autocomplete="off"></div>
+          <div class="field"><label>Number of guests / Aantal gasten</label><input type="number" id="guests" min="1" max="12" placeholder="4"></div>
+          <div class="field"><label>Ages of guests / Leeftijden gasten</label><input type="text" id="ages" placeholder="e.g. 35, 38, 12, 10" autocomplete="off"></div>
         </div>
       </div>
     </div>
@@ -299,24 +299,24 @@
       <div class="section-head"><i class="fa-solid fa-calendar-days"></i><span>Charter details</span></div>
       <div class="section-body">
         <div class="field">
-          <label>Vertrekhaven</label>
+          <label>Departure port / Vertrekhaven</label>
           <div class="pill-group" id="port-grp">
             <label class="pill" onclick="setPill('port','Sotogrande',this)"><input type="radio" name="port" value="Sotogrande"> Sotogrande</label>
             <label class="pill" onclick="setPill('port','Puerto Banús',this)"><input type="radio" name="port" value="Puerto Banús"> Puerto Banús</label>
           </div>
         </div>
         <div class="field">
-          <label>Catering gewenst?</label>
+          <label>Catering desired? / Catering gewenst?</label>
           <div class="pill-group" id="cat-grp">
-            <label class="pill" onclick="setPill('cat','ja',this)"><input type="radio" name="cat" value="ja"> Ja</label>
-            <label class="pill" onclick="setPill('cat','nee',this)"><input type="radio" name="cat" value="nee"> Nee</label>
+            <label class="pill" onclick="setPill('cat','ja',this)"><input type="radio" name="cat" value="ja"> Yes / Ja</label>
+            <label class="pill" onclick="setPill('cat','nee',this)"><input type="radio" name="cat" value="nee"> No / Nee</label>
           </div>
         </div>
         <div class="row4">
-          <div class="field"><label>Startdatum</label><input type="date" id="date-from" oninput="calcDays()"></div>
-          <div class="field"><label>Einddatum</label><input type="date" id="date-to" oninput="calcDays()"></div>
-          <div class="field"><label>Starttijd</label><input type="time" id="tstart" value="10:00"></div>
-          <div class="field"><label>Eindtijd</label><input type="time" id="tend" value="18:00"></div>
+          <div class="field"><label>Start date / Startdatum</label><input type="date" id="date-from" oninput="calcDays()"></div>
+          <div class="field"><label>End date / Einddatum</label><input type="date" id="date-to" oninput="calcDays()"></div>
+          <div class="field"><label>Start time / Starttijd</label><input type="time" id="tstart" value="10:00"></div>
+          <div class="field"><label>End time / Eindtijd</label><input type="time" id="tend" value="18:00"></div>
         </div>
         <div class="days-info" id="days-info"></div>
         <div class="days-info" id="price-info" style="display:none"></div>
@@ -325,74 +325,74 @@
 
     <!-- Prijs & betaling -->
     <div class="section">
-      <div class="section-head"><i class="fa-solid fa-euro-sign"></i><span>Prijs & betaling</span></div>
+      <div class="section-head"><i class="fa-solid fa-euro-sign"></i><span>Price / Prijs</span></div>
       <div class="section-body">
         <div class="row3">
-          <div class="field"><label>Basisprijs (€)</label><input type="number" id="base" placeholder="-" readonly></div>
+          <div class="field"><label>Base price / Basisprijs (€)</label><input type="number" id="base" placeholder="-" readonly></div>
           <div class="field"><label>Crew cost (€)</label><input type="number" id="crew" placeholder="-" readonly></div>
-          <div class="field"><label>Fuel forfait (€)</label><input type="number" id="fuel" placeholder="-" readonly></div>
+          <div class="field"><label>Fuel surcharge / Fuel forfait (€)</label><input type="number" id="fuel" placeholder="-" readonly></div>
         </div>
         <div class="row3">
-          <div class="field"><label style="color:var(--gold);font-weight:600">Totaal (€)</label><input type="number" id="total" placeholder="-" readonly style="border-color:var(--gold);color:var(--gold-l);font-weight:600"></div>
+          <div class="field"><label style="color:var(--gold);font-weight:600">Total / Totaal (€)</label><input type="number" id="total" placeholder="-" readonly style="border-color:var(--gold);color:var(--gold-l);font-weight:600"></div>
           <div class="field"></div>
           <div class="field"></div>
         </div>
-        <div style="font-size:12px;color:var(--muted);margin-top:2px">Catering en alcoholische dranken zijn niet inbegrepen in de prijs.</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">Catering and alcoholic drinks are not included / Catering en alcoholische dranken zijn niet inbegrepen.</div>
       </div>
     </div>
 
     <!-- Catering & dranken -->
     <div class="section" id="catering-section">
-      <div class="section-head"><i class="fa-solid fa-utensils"></i><span>Catering & dranken</span></div>
+      <div class="section-head"><i class="fa-solid fa-utensils"></i><span>Catering & drinks / Catering & dranken</span></div>
       <div class="section-body">
         <div class="field">
-          <label>Gerechten</label>
+          <label>Dishes / Gerechten</label>
           <div class="pill-group" id="food-grp">
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Mediterranean breakfast board"> Ontbijtboard</label>
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Chicken salad"> Kippensalade</label>
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Pasta deluxe (prawns)"> Pasta deluxe</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Mediterranean breakfast board"> Ontbijtboard / Breakfast board</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Chicken salad"> Kippensalade / Chicken salad</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Pasta deluxe (prawns)"> Pasta deluxe (prawns)</label>
             <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Paella"> Paella</label>
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Tapas board – luxury"> Tapas luxe</label>
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Fresh Tortilla"> Tortilla</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Tapas board – luxury"> Tapas luxe / Luxury tapas board</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Fresh Tortilla"> Tortilla / Fresh tortilla</label>
             <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Tiramisu"> Tiramisu</label>
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Fresh fruit"> Vers fruit</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Fresh fruit"> Vers fruit / Fresh fruit</label>
           </div>
         </div>
         <div class="field">
-          <label>Alcoholische dranken (optioneel)</label>
+          <label>Alcoholic drinks (optional) / Alcoholische dranken (optioneel)</label>
           <div class="pill-group" id="drinks-grp">
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Wine"> Wijn</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Wine"> Wijn / Wine</label>
             <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Cava"> Cava</label>
             <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Champagne"> Champagne</label>
             <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Gin & tonic"> Gin & tonic</label>
-            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Vodka + fresh orange"> Vodka OJ</label>
+            <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Vodka + fresh orange"> Vodka Orange</label>
             <label class="pill" onclick="togCb(this, event)"><input type="checkbox" value="Mojito"> Mojito</label>
           </div>
         </div>
         <div class="row2">
-          <div class="field"><label>Wijn detail (soort + flessen)</label><input type="text" id="wine" placeholder="bv. 2x Rosé, 1x Wit"></div>
-          <div class="field"><label>Cava / Champagne (flessen)</label><input type="text" id="bubbly" placeholder="bv. 2x Cava"></div>
+          <div class="field"><label>Wine details / Wijn detail (type + bottles)</label><input type="text" id="wine" placeholder="e.g. 2x Rosé, 1x White"></div>
+          <div class="field"><label>Cava / Champagne (bottles)</label><input type="text" id="bubbly" placeholder="e.g. 2x Cava"></div>
         </div>
         <div class="field">
-          <label>Speciale verzoeken / menu afspraken</label>
-          <textarea id="special" placeholder="bv. Menu as discussed with Gunther, allergiëen..."></textarea>
+          <label>Special requests / Speciale verzoeken</label>
+          <textarea id="special" placeholder="e.g. allergies, dietary preferences..."></textarea>
         </div>
       </div>
     </div>
 
     <!-- Interne notities -->
     <div class="section">
-      <div class="section-head"><i class="fa-solid fa-comment-dots"></i><span>Opmerkingen</span></div>
+      <div class="section-head"><i class="fa-solid fa-comment-dots"></i><span>Remarks / Opmerkingen</span></div>
       <div class="section-body">
         <div class="field">
-          <label>Eventuele extra wensen of opmerkingen</label>
-          <textarea id="notes" placeholder="bv. verjaardagsfeest, allergieën, speciale verzoeken..."></textarea>
+          <label>Any additional wishes or remarks / Eventuele extra wensen of opmerkingen</label>
+          <textarea id="notes" placeholder="e.g. birthday party, special requests..."></textarea>
         </div>
       </div>
     </div>
 
     <button class="btn-submit" id="btn-submit" onclick="submitToSheet()">
-      <i class="fa-solid fa-paper-plane"></i> Verzend boeking
+      <i class="fa-solid fa-paper-plane"></i> Submit booking / Verzend boeking
     </button>
     <div class="submit-status" id="submit-status"></div>
 
@@ -462,14 +462,14 @@
         const diff = Math.round((new Date(to) - new Date(from)) / 86400000);
         if (diff > 0) {
           info.textContent = diff === 1
-            ? '1 dag charter: ' + fmtDate(from)
-            : diff + ' dagen charter: ' + fmtDate(from) + ' t/m ' + fmtDate(to);
+            ? '1 day charter: ' + fmtDate(from)
+            : diff + ' day charter: ' + fmtDate(from) + ' – ' + fmtDate(to);
           info.style.display = 'block';
         } else {
           info.style.display = 'none';
         }
       } else if (from) {
-        info.textContent = 'Dag charter: ' + fmtDate(from);
+        info.textContent = 'Day charter: ' + fmtDate(from);
         info.style.display = 'block';
       } else {
         info.style.display = 'none';
@@ -496,7 +496,7 @@
       document.getElementById('fuel').value = fuel;
       document.getElementById('total').value = basePrice + crew + fuel;
 
-      priceInfo.innerHTML = '<strong>' + getSeasonLabel(season) + '</strong> — ' + capped + (capped === 1 ? ' dag' : ' dagen') + ' charter';
+      priceInfo.innerHTML = '<strong>' + getSeasonLabel(season) + '</strong> — ' + capped + ' day charter';
       priceInfo.style.display = 'block';
     }
 
@@ -616,7 +616,7 @@
       const btn = document.getElementById('btn-submit');
       const status = document.getElementById('submit-status');
       btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Verzenden...';
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
 
       const data = {
         name:      document.getElementById('name').value,
@@ -649,13 +649,13 @@
       })
       .then(() => {
         status.className = 'submit-status success';
-        status.innerHTML = '<i class="fa-solid fa-check-circle"></i> Verzonden!';
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Verzonden!';
+        status.innerHTML = '<i class="fa-solid fa-check-circle"></i> Submitted! / Verzonden!';
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Submitted!';
         btn.style.background = '#27ae60';
       })
       .catch(() => {
         status.className = 'submit-status error';
-        status.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Verzenden mislukt. Controleer je internetverbinding.';
+        status.innerHTML = '<i class="fa-solid fa-exclamation-circle"></i> Submission failed. Please check your internet connection.';
         btn.disabled = false;
         btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Verzend boeking';
       });
